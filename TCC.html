@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>HELLSING</title>
+  <style>
+
+   .carrossel-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 960px; 
+  margin: 20px auto;
+}
+
+.carrossel {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  transition: transform 0.5s ease;
+  scroll-behavior: smooth;
+  overflow-x: auto;
+}
+
+.carrossel::-webkit-scrollbar {
+  display: none;
+}
+
+.imagem {
+  min-width: 300px;
+  height: 200px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0a0a0a;
+      color: #fff;
+    }
+
+    header {
+      background-color: #200000;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      color: #ff1a1a;
+    }
+
+    .busca input {
+      margin-top: 10px;
+      padding: 10px;
+      width: 300px;
+      background-color: #1a1a1a;
+      color: white;
+      border: 1px solid #ff1a1a;
+      border-radius: 5px;
+    }
+
+    .carrossel-container {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .carrossel {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      gap: 10px;
+      padding: 10px;
+    }
+
+    .carrossel::-webkit-scrollbar {
+      display: none;
+    }
+
+    .imagem {
+      min-width: 300px;
+      height: 200px;
+      flex-shrink: 0;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .imagem img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .botao {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #330000;
+      color: #ff1a1a;
+      border: none;
+      padding: 10px;
+      font-size: 2em;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .anterior {
+      left: 10px;
+    }
+
+    .proximo {
+      right: 10px;
+    }
+
+    section {
+      padding: 20px;
+    }
+
+    h2 {
+      color: #ff1a1a;
+      border-bottom: 2px solid #660000;
+      padding-bottom: 5px;
+    }
+
+    .jogos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .jogo {
+      width: 200px;
+      background-color: #1a1a1a;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+
+    .jogo:hover {
+      transform: scale(1.05);
+    }
+
+    .jogo img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+    }
+
+    .jogo p {
+      margin: 0;
+      padding: 10px;
+      text-align: center;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+    .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+  .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  }
+  @media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    background-color: #1e1e2f;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    display: none;
+  }
+
+  .navbar.active .nav-links {
+    display: flex;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1></h1>
+  <div class="busca">
+    <input type="text" placeholder="Digite o nome do jogo...">
+  </div>
+  <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="TCC.html">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <!-- <li><a href="#servicos">Serviços</a></li> -->
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+</header>
+
+<div class="carrossel-container">
+  <button class="botao anterior" onclick="rolarCarrossel(-1)">&#9664;</button>
+  <div class="carrossel" id="carrossel">
+    <div class="imagem"><img src="img/O.jpg" alt="Slide 1"></div>
+    <div class="imagem"><img src="img/PLAY.jpg" alt="Slide 2"></div>
+    <div class="imagem"><img src="img/Choo-Choo-Charles-Key-Art.avif" alt="Slide 3"></div> 
+    <div class="imagem"><img src="img/downloa.jpg" alt="Slide 4"></div>
+    <div class="imagem"><img src="img/OVER.jpg" alt="Slide 5"></div>
+    <div class="imagem"><img src="img/halo.jpg" alt="Slide 6"></div>
+    <div class="imagem"><img src="img/repo.jpg" alt="Slide 7"></div>
+    <div class="imagem"><img src="img/up.jpg" alt="Slide 8"></div>
+    <div class="imagem"><img src="img/lock.jpg" alt="Slide 9"></div>
+    <div class="imagem"><img src="img/ba.jpg" alt="Slide 20"></div>
+  </div>
+  <button class="botao proximo" onclick="rolarCarrossel(1)">&#9654;</button>
+</div>
+
+
+
+<section>
+  <h2>Jogos de FPS</h2>
+   <div class="jogos">
+    <div class="jogo">
+      <a href="compra/compra2.html">
+        <img src="img/1.jpg" alt="Counter-Strike 2">
+        <p>Counter-Strike 2</p>
+      </a>
+    </div>
+    <div class="jogo">
+   <a href="compra/compra3.html">
+    <img src="img/OVER.jpg" alt="OVERWATCH 2">
+    <p>OVERWATCH 2</p>
+   </a>
+   </div>
+    <div class="jogo">
+      <a href="compra/compra9.html">
+      <img src="img/call.jpg" alt="Jogo de Tiro 3">
+      <p>Call of Duty</p>
+      </a>
+    </div>
+    <div class="jogo">
+   <a href="compra/compra4.html">
+    <img src="img/va.jpg" alt="Valorant">
+    <p>Valorant</p>
+   </a>
+   </div>
+    <div class="jogo">
+      <a href="compra/compra10.html">
+      <img src="img/ba.jpg" alt="Jogo de Tiro 5">
+      <p>Battlefield</p>
+    </a>
+    </div>
+    <div class="jogo">
+      <a href="compra/compra11.html">
+      <img src="img/rai.jpg" alt="Jogo de Tiro 6">
+      <p>Rainbow Six</p>
+    </a>
+    </div>
+    <div class="jogo">
+      <a href="compra/compra12.html"></a>
+      <img src="img/halo.jpg" alt="Jogo de Tiro 7">
+      <p>Halo</p>
+    </div>
+  </div>
+
+  <h2>Jogos de Terror</h2>
+  <div class="jogos">
+    <div class="jogo">
+      <a href="compra/compra.html">
+        <img src="img/PlAY.jpg" alt="Poppy Playtime">
+        <p>Poppy Playtime</p>
+      </a>
+    </div>
+    <div class="jogo">
+   <a href="compra/compra5.html">
+    <img src="img/Choo-Choo-Charles-Key-Art.avif" alt="Cho Cho Charles">
+    <p>Cho Cho Charles</p>
+   </a>
+   </div>
+    <div class="jogo">
+  <a href="compra/compra6.html">
+    <img src="img/phas.jpeg" alt="Phasmofobia">
+    <p>Phasmofobia</p>
+  </a>
+   </div>
+    <div class="jogo">
+      <a href="compra/compra13.html">
+      <img src="img/still.jpg" alt="Jogo de Terror 4">
+      <p>Still Wake Deep</p>
+    </a>
+    </div>
+    <div class="jogo">
+      <a href="compra/compra14.html">
+      <img src="img/repo.jpg" alt="Jogo de Terror 5">
+      <p>R.E.P.O</p>
+    </a>
+    </div>
+    <div class="jogo">
+      <a href="compra/compra2.html">
+      <img src="img/ame.jpg" alt="Jogo de Terror 6">
+      <p>Amnesia</p>
+    </a>
+    </div>
+    <div class="jogo">
+      <a href="compra/compra16.html">
+      <img src="img/letal.jpg" alt="Jogo de Terror 7">
+      <p>Lethal Company</p>
+    </a>
+    </div>
+  </div>
+
+  <h2>Outros Jogos</h2>
+  <div class="jogos">
+    <div class="jogo">
+    <a href="compra/compra7.html">
+    <img src="img/downloa.jpg" alt="Marvel Rivals">
+    <p>Marvel Rivals</p>
+   </a>
+   </div>
+    <div class="jogo">
+      <a href="compra/compra17.html">
+      <img src="img/O.jpg" alt="Spider Man">
+      <p>Spider Man</p>
+    </a>
+    </div>
+    <div class="jogo">
+   <a href="compra/compra8.html">
+    <img src="img/up.jpg" alt="Only UP!">
+    <p>Only UP!</p>
+    </a>
+   </div>
+    <div class="jogo">
+      <a href="compra/compra18.html">
+      <img src="img/park.jpg" alt="Outro Jogo 4">
+      <p>Pico Park</p>
+    </a>
+    </div>
+    <div class="jogo">
+      <a href="compra/compra19.html">
+      <img src="img/GTA.jpg" alt="Outro Jogo 5">
+      <p>GTA V</p>
+    </a>
+    </div>
+    <div class="jogo">
+      <a href="compra/compra20.html">
+      <img src="img/lock.jpg" alt="Outro Jogo 6">
+      <p>Lockdown Protocol</p>
+    </a>
+    </div>
+    <div class="jogo">
+      <a href="compra/compra2.html">
+      <img src="img/sea.jpg" alt="Outro Jogo 7">
+      <p>Sea of Thieves</p>
+    </a>
+    </div>
+  </div>
+</section>
+
+
+<section style="background: linear-gradient(#1a0000, #330000); padding: 20px; border-top: 2px solid #660000;">
+  <h2 style="color: #ff1a1a; border-bottom: 2px solid #800000; padding-bottom: 5px; text-shadow: 1px 1px 2px #000;">Últimas Notícias</h2>
+  <div style="margin-top: 15px;">
+    <div style="padding: 15px; margin-bottom: 15px; background-color: #260000; border: 1px solid #550000; border-radius: 6px; box-shadow: 0 0 10px #66000040;">
+      🔥 <strong>Novo jogo de terror lançado:</strong> "Silent Fear"
+    </div>
+    <div style="padding: 15px; margin-bottom: 15px; background-color: #260000; border: 1px solid #550000; border-radius: 6px; box-shadow: 0 0 10px #66000040;">
+      🎮 <strong>Atualização de "Overwatch 2":</strong> novo personagem revelado!
+    </div>
+    <div style="padding: 15px; margin-bottom: 15px; background-color: #260000; border: 1px solid #550000; border-radius: 6px; box-shadow: 0 0 10px #66000040;">
+      🚀 <strong>Expansão de "Only UP!":</strong> fases no espaço adicionadas
+    </div>
+  </div>
+</section>
+
+
+
+<footer style="background-color: #200000; color: #fff; text-align: center; padding: 15px; font-size: 14px;">
+  &copy; 2025 HELLSING. Todos os direitos reservados.
+</footer>
+
+
+
+
+<script>
+  function rolarCarrossel(direcao) {
+    const carrossel = document.getElementById('carrossel');
+    const largura = carrossel.querySelector('.imagem').offsetWidth + 10;
+    carrossel.scrollBy({ left: direcao * largura, behavior: 'smooth' });
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const carrossel = document.getElementById('carrossel');
+
+    setInterval(() => {
+      const largura = carrossel.querySelector('.imagem').offsetWidth + 10;
+      const maxScroll = carrossel.scrollWidth - carrossel.clientWidth;
+
+      
+      if (carrossel.scrollLeft + 20 >= maxScroll) {
+        carrossel.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        carrossel.scrollBy({ left: largura, behavior: 'smooth' });
+      }
+    }, 3000);
+  });
+</script>
+
+</body>
+</html>
+
+
+
+
